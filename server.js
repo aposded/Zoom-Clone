@@ -27,4 +27,6 @@ io.on('connection', socket => {
     })
 })
 
+server.listen(3000)
+
 module.exports.handler = serverless(app)
