@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const server = require('http').Server(app)
+const serverless = require('serverless-http');
 const io = require('socket.io')(server)
 const { v4: uuidV4 } = require('uuid')
 
@@ -26,4 +27,4 @@ io.on('connection', socket => {
     })
 })
 
-server.listen(3000)
+module.exports.handler = serverless(app)
